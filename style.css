@@ -29,7 +29,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 ol, ul {
 	list-style: none;
@@ -50,11 +51,14 @@ textarea {
     border: solid black 2px;
     outline: none;
     resize: none;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 .container {
     display: flex;
     justify-content: center;
     align-content: center;
+    width: 100vw;
+    height: 100vh;
 }
 .content {
     justify-content: center;
