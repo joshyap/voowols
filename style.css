@@ -48,6 +48,8 @@ table {
 }
 textarea {
     border: solid black 2px;
+    outline: none;
+    resize: none;
 }
 .container {
     display: flex;

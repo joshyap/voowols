@@ -3,7 +3,7 @@
 
 let replaceVowels = () => {
     inputTextValue = document.getElementById("inputText").value;
-    let outputTextValue;
+    var outputTextValue;
 
     if (inputTextValue.length < 1) {
         alert('enter a message to translate');
@@ -11,6 +11,12 @@ let replaceVowels = () => {
         outputTextValue = inputTextValue.replace(/o/g, "oo").replace(/a/g, "o").replace(/e/g, "o").replace(/i/g, "o").replace(/u/g, "o");
         // alert(outputTextValue);
         document.getElementById("outputText").value = outputTextValue;
-    }
-    
+        speak();
+    }   
 }
+
+let speak = () => {
+    var utterance = new SpeechSynthesisUtterance(outputTextValue);
+    window.speechSynthesis.speak(utterance);
+}
+
