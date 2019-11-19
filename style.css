@@ -53,7 +53,7 @@ textarea {
     resize: none;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
-.container {
+/*.container {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -63,4 +63,4 @@ textarea {
 .content {
     justify-content: center;
     align-content: center;
-}
+} */
