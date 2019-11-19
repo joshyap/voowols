@@ -1,38 +1,16 @@
-// let convertText = (i) => {
-//     let inputTextValue = document.getElementById("inputText").value;
-//     let outputTextValue;
-    
-//     if (inputTextValue.length < 1) {
-//         alert('enter a message to translate');
-//     } else {
-//         alert(inputTextValue);
-//     }
+// https://mdn.github.io/web-speech-api/speak-easy-synthesis/
+// https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
 
-//     outputTextValue = 'output';
-//     document.getElementById("outputText").value = outputTextValue;
-// }
-
-let replaceVowels = inputTextValue => {
+let replaceVowels = () => {
     inputTextValue = document.getElementById("inputText").value;
-    
+    let outputTextValue;
+
     if (inputTextValue.length < 1) {
         alert('enter a message to translate');
     } else {
-        // alert(inputTextValue);
-        for (let i=0; i<inputTextValue.length; i++) {
-            if (inputTextValue.charAt(i).toLowerCase() == "a" || inputTextValue.charAt(i).toLowerCase() == "e" || inputTextValue.charAt(i).toLowerCase() == "i" || inputTextValue.charAt(i).toLowerCase() == "o" || inputTextValue.charAt(i).toLowerCase() == "u") {
-                inputTextValue.replace(inputTextValue(i), "o");
-            }
-        }
-        alert(inputTextValue);
-        document.getElementById("outputText").value = inputTextValue;
+        outputTextValue = inputTextValue.replace(/o/g, "oo").replace(/a/g, "o").replace(/e/g, "o").replace(/i/g, "o").replace(/u/g, "o");
+        // alert(outputTextValue);
+        document.getElementById("outputText").value = outputTextValue;
     }
-    
-    // for (let i=0; i<inputTextValue.length; i++) {
-    //     if (inputTextValue.charAt(i).toLowerCase() == "A" || inputTextValue.charAt(i).toLowerCase() == "E" || inputTextValue.charAt(i).toLowerCase() == "I" || inputTextValue.charAt(i).toLowerCase() == "O" || inputTextValue.charAt(i).toLowerCase() == "U") {
-    //         inputTextValue.replace(inputTextValue(i), "o");
-    //     }
-    //     return inputTextValue;
-    // }
     
 }
