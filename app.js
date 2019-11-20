@@ -6,7 +6,7 @@ const synth = window.speechSynthesis;
 
 // grabbing the DOM elements
 const textForm = document.querySelector("form"); // ?
-const textInput = document.getElementById("inputText"); // ?
+const textInput = document.getElementById("outputText"); // ? 
 const voiceSelect = document.getElementById("voice-select");
 const rate = document.getElementById("rate");
 const rateValue = document.getElementById("rate-value");
@@ -34,12 +34,30 @@ if (synth.onvoiceschanged !== undefined) {
     synth.onvoiceschanged = getVoices;
 }
 
+// OG
+const replaceVowels = () => {
+    let inputTextValue = document.getElementById("inputText").value;
+
+    if (inputTextValue.length < 1) {
+        alert('enter a message to translate');
+    } else {
+        outputTextValue = inputTextValue.replace(/o/g, "oo").replace(/a/g, "o").replace(/e/g, "o").replace(/i/g, "o").replace(/u/g, "o");
+        document.getElementById("outputText").value = outputTextValue;
+        // speak();
+    }   
+}
+
+
+
 const speak = () => {
     // check if speaking already
     if (synth.speaking) {
         console.error('Already speaking...');
         return;
     }
+
+    replaceVowels();
+
     if (textInput.value !== '') {
         const speakText = new SpeechSynthesisUtterance(textInput.value);
         
@@ -82,24 +100,5 @@ textForm.addEventListener('submit', e => {
 rate.addEventListener('change', e => rateValue.textContent = rate.value);
 pitch.addEventListener('change', e => pitchValue.textContent = pitch.value);
 
-voiceSelect.addEventListener('change', e => speak());
-
-// OG
-let replaceVowels = () => {
-    inputTextValue = document.getElementById("inputText").value;
-    var outputTextValue;
-
-    if (inputTextValue.length < 1) {
-        alert('enter a message to translate');
-    } else {
-        outputTextValue = inputTextValue.replace(/o/g, "oo").replace(/a/g, "o").replace(/e/g, "o").replace(/i/g, "o").replace(/u/g, "o");
-        document.getElementById("outputText").value = outputTextValue;
-        // speak();
-    }   
-}
-
-// let speak = () => {
-//     var utterance = new SpeechSynthesisUtterance(outputTextValue);
-//     window.speechSynthesis.speak(utterance);
-// }
+// voiceSelect.addEventListener('change', e => speak());
 

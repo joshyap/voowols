@@ -53,6 +53,9 @@ textarea {
     resize: none;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
+#outputText {
+    color: red;
+}
 /*.container {
     display: flex;
     justify-content: center;
