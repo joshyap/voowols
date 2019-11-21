@@ -56,6 +56,9 @@ textarea {
 #outputText {
     color: red;
 }
+a:link {
+    text-decoration: none;
+}
 /*.container {
     display: flex;
     justify-content: center;
